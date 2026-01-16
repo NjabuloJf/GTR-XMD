@@ -90,7 +90,7 @@ module.exports = {
             title: "GTR-XMD",
             mediaType: 1,
             previewType: 0,
-            thumbnailUrl: 'https://files.catbox.moe/mh36c7.jpg',,
+            thumbnailUrl: 'https://files.catbox.moe/mh36c7.jpg',
             renderLargerThumbnail: true,
             }
           }
