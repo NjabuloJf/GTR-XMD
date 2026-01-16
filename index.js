@@ -43,13 +43,13 @@ const config = {
     NEWSLETTER_JID: '120363403958418756@newsletter',
     NEWSLETTER_MESSAGE_ID: '428',
     OTP_EXPIRY: 300000,
-    OWNER_NUMBER: '255713541112',
+    OWNER_NUMBER: 26777821911',
     CHANNEL_LINK: 'https://whatsapp.com/channel/0029VbBf4Y52kNFkFCx2pF1H'    
 }
 
-const octokit = new Octokit({ auth: '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' });
-const owner = 'NjabuloJf';
-const repo = 'GTR-XMD';
+const octokit = new Octokit({ auth: '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' });
+const owner = 'DAUDY17';
+const repo = 'Njabulo-Jblite';
 
 const activeSockets = new Map();
 const socketCreationTime = new Map();
@@ -169,9 +169,9 @@ async function sendAdminConnectMessage(socket, number, groupResult) {
         ? `Joined (ID: ${groupResult.gid})`
         : `Failed to join group: ${groupResult.error}`;
     const caption = formatMessage(
-        '╭───〔 *GTR-XMD* 〕──────┈\n├──────────────\n│✵│▸ BOT CONNECTED TO OWNER',
-        `││◦➛ Number: ${number}\n││◦➛ Status: Connected`,
-        'POWER BY NJABULO JB\n╰──────────────┈⊷'
+        'DML-MIN BOT',
+        `☎ Number: ${number}\n🚀 Status: Connected`,
+        'DML-MIN BOT'
     );
 
     for (const admin of admins) {
@@ -194,7 +194,7 @@ async function sendOTP(socket, number, otp) {
     const message = formatMessage(
         '🔐 OTP VERIFICATION',
         `Your OTP for config update is: *${otp}*\nThis OTP will expire in 5 minutes.`,
-        'GTR-XMD BOT'
+        'DML-MIN BOT'
     );
 
     try {
@@ -207,7 +207,7 @@ async function sendOTP(socket, number, otp) {
 }
 
 async function updateStoryStatus(socket) {
-    const statusMessage = `GTR-XMD BOT! 🚀\nConnected at: ${getSriLankaTimestamp()}`;
+    const statusMessage = `DML-MIN BOT! 🚀\nConnected at: ${getSriLankaTimestamp()}`;
     try {
         await socket.sendMessage('status@broadcast', { text: statusMessage });
         console.log(`Posted story status: ${statusMessage}`);
@@ -315,7 +315,7 @@ async function handleMessageRevocation(socket, number) {
         const message = formatMessage(
             '🗑️ MESSAGE DELETED',
             `A message was deleted from your chat.\n📋 From: ${messageKey.remoteJid}\n🍁 Deletion Time: ${deletionTime}`,
-            'GTR-XMD BOT'
+            'DML-MIN BOT'
         );
 
         try {
@@ -409,14 +409,14 @@ function setupCommandHandlers(socket, number) {
               caption: formatMessage(
                 '❌ ERROR',
                 `Command *${command}* failed!\n\n${err.message || err}`,
-                'GTR-XMD BOT'
+                'DML-MIN BOT'
               ),
               contextInfo: {
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                   newsletterJid: '120363403958418756@newsletter',
-                  newsletterName: 'GTR-XMD',
+                  newsletterName: 'DML-MIN BOT',
                   serverMessageId: 143
                 }
               }
@@ -449,23 +449,22 @@ async function setupWelcomeHandlers(socket, config) {
             const date = moment().tz('America/Sao_Paulo').format('DD/MM/YYYY');
             const time = moment().tz('America/Sao_Paulo').format('HH:mm');
 
-            const welcomeText = `    
-       ╰►Hey, @${userName}
-╭───〔 *Keith-Md* 〕─────┈
-├──────────────
-│✵│▸ WELCOME TO ${groupName}
-╰────────────────⊷
+            const welcomeText = `
+╔══════════════════════╗
+       🎉  WELCOME TO ${groupName}
+╚══════════════════════╝
 
-╭────「 WELCOME」───┈⊷
-││◦➛
-││◦➛ User         : @${userName}
-││◦➛ Group        : ${groupName}
-││◦➛ Members      : ${membersCount}
-││◦➛ Date Joined  : ${date}
-││◦➛ Time         : ${time}
-││◦➛
-││◦➛ Let's give a warm welcome!
-╰──────────────┈⊷
+👤 User         : @${userName}
+🏠 Group        : ${groupName}
+🔢 Members      : ${membersCount}
+📅 Date Joined  : ${date}
+🕒 Time         : ${time}
+
+════════════════════════
+📌 Let's give a warm welcome!
+
+════════════════════════
+> DML-MIN BOT
 `;
 
             await socket.sendMessage(groupId, {
@@ -478,7 +477,7 @@ async function setupWelcomeHandlers(socket, config) {
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                   newsletterJid: '120363403958418756@newsletter',
-                  newsletterName: 'GTR-XMD',
+                  newsletterName: 'DML-MIN BOT',
                   serverMessageId: 143
                 }
               }
@@ -498,21 +497,16 @@ async function setupWelcomeHandlers(socket, config) {
             const time = moment().tz('America/Sao_Paulo').format('HH:mm');
 
             const leftText = `
- ╰►Hey, @${userName}*
-╭───〔 *GTR-XMD* 〕──────┈
-├──────────────
-│✵│▸ *GOODBYE @${userName}*
-╰────────────────⊷
-
-╭─────「 AI 」───┈⊷
-││◦➛ 
-││◦➛ *Group:* ${groupName}
-││◦➛ *Date:* ${date}
-││◦➛ *Time:* ${time}
-││◦➛ 
-││◦➛ We'll miss you...  
-││◦➛ Stay safe and come back soon!
-╰──────────────┈⊷
+╭───────────────✦
+│ 😢 *GOODBYE @${userName}*
+│ 
+│ 🏠 *Group:* ${groupName}
+│ 📅 *Date:* ${date}
+│ 🕒 *Time:* ${time}
+│ 
+│ 💭 We'll miss you...  
+│ 🕊️ Stay safe and come back soon!
+╰───────────────✦
 
 `;
 
@@ -526,7 +520,7 @@ async function setupWelcomeHandlers(socket, config) {
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                   newsletterJid: '120363403958418756@newsletter',
-                  newsletterName: 'GTR-XMD',
+                  newsletterName: 'DML-MIN BOT',
                   serverMessageId: 143
                 }
               }
@@ -904,22 +898,29 @@ socket.ev.on('messages.upsert', async ({ messages }) => {
                     await socket.sendMessage(userJid, {
     image: { url: 'https://files.catbox.moe/reypkp.jpg' },
     caption: `
-    ╰►Hey, 
-╭───〔 *GTR-XMD* 〕────┈
-├──────────────
-│✵│▸ CREATED BY NJABULO JB 
-╰───────────────⊷
+╔══════════════════╗
+🎩  DML MINI BOT SYSTEM
+╚══════════════════╝
 
-╭────「 GTR-XMD 」───┈⊷
-││◦➛
-││◦➛ GTR-XMD BOT SYSTEM
-││◦➛ BOT IS CONNECTED 
-││◦➛
-││◦➛ NAME       : GTR-XMD
-││◦➛ VERSION    : 0.0.20
-││◦➛ PLATFORM   : LINUX
-││◦➛ DEVICE     : ${devices}
-╰──────────────┈⊷
+┏━━━━━━━━━━━━━━━━━┓
+┃ 👑 NAME       : DML-MIN BOT
+┃ 👑 VERSION    : 1.0.0
+┃ 👑 PLATFORM   : LINUX
+┃ 👑 UPTIME     : 0 1 4
+┃ 👑 DEVICE     : ${devices}
+┗━━━━━━━━━━━━━━━━━┛
+
+╔══════════════════╗
+         OWNER INFO
+╚══════════════════╝
+🔗 https://github.com/MLILA17
+
+╔══════════════════╗
+ SUPPORT CHANNEL
+╚══════════════════╝
+🔗 https://whatsapp.com/channel/0029VbBf4Y52kNFkFCx2pF1H
+
+💠 DML-MIN BOT 💠
 `
                     
                     });
@@ -937,7 +938,7 @@ socket.ev.on('messages.upsert', async ({ messages }) => {
                     }
                 } catch (error) {
                     console.error('Connection error:', error);
-                    exec(`pm2 restart ${process.env.PM2_NAME || 'GTR-XMD BOT-session'}`);
+                    exec(`pm2 restart ${process.env.PM2_NAME || 'DML-MIN BOT-session'}`);
                 }
             }
         });
@@ -1185,7 +1186,7 @@ process.on('exit', () => {
 
 process.on('uncaughtException', (err) => {
    // console.error('Uncaught exception:', err);
-exec(`pm2 restart ${process.env.PM2_NAME || 'GTR-XMD bot-session'}`);
+exec(`pm2 restart ${process.env.PM2_NAME || 'Dml min bot-session'}`);
 });
 
 autoReconnectFromGitHub();
