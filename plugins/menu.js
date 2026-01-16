@@ -80,11 +80,6 @@ module.exports = {
       const buttons = [
       {
         "buttonId":  `.ping`,
-        "buttonText": { "displayText": "ջՇℛ-✘ℳð" },
-        "type": 1
-      },
-      {
-        "buttonId":  `.ping`,
         "buttonText": { "displayText": "ɕζℜ-✘ლɗ" },
         "type": 1
       },
@@ -98,7 +93,7 @@ module.exports = {
       await sock.sendMessage(
         from,
         {
-          image: { url: 'https://files.catbox.moe/mh36c7.jpg' },
+          video: { url: 'https://d.uguu.se/NqVfntFn.mp4' },
           caption: menuMsg,
             buttons: buttons,
             headerType: 4,
@@ -108,7 +103,7 @@ module.exports = {
             title: "GTR-XMD",
             mediaType: 1,
             previewType: 0,
-            thumbnailUrl: 'https://files.catbox.moe/mh36c7.jpg',
+            thumbnailUrl: 'https://h.uguu.se/DJBwuPKs.jpg',
             renderLargerThumbnail: true,
             }
           }
