@@ -47,7 +47,7 @@ const config = {
     CHANNEL_LINK: 'https://whatsapp.com/channel/0029VbBf4Y52kNFkFCx2pF1H'    
 }
 
-const octokit = new Octokit({ auth: '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' });
+const octokit = new Octokit({ auth: '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' });
 const owner = 'NjabuloJf';
 const repo = 'GTR-XMD';
 
