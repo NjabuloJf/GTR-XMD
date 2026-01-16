@@ -94,7 +94,7 @@ module.exports = {
       await sock.sendMessage(from, {
         interactiveMessage: {
           header: {
-            documentMessage: {
+            imageMessage: {
               url: randomNjabulourl,
               mimetype: 'image/jpeg',
               fileSha256: '',
@@ -171,15 +171,6 @@ module.exports = {
             },
           },
         },
-        contextInfo: {
-          externalAdReply: {
-            title: `⏰ message menu`,
-            mediaType: 1,
-            previewType: 0,
-            thumbnailUrl: randomNjabulourl,
-            renderLargerThumbnail: true,
-          },
-        },
       }, { quoted: msg });
     } catch (e) {
       console.error("❌ Menu Error:", e);
@@ -187,3 +178,4 @@ module.exports = {
     }
   }
 };
+
