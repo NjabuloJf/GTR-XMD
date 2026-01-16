@@ -43,13 +43,13 @@ const config = {
     NEWSLETTER_JID: '120363403958418756@newsletter',
     NEWSLETTER_MESSAGE_ID: '428',
     OTP_EXPIRY: 300000,
-    OWNER_NUMBER: 26777821911',
+    OWNER_NUMBER: '26777821911',
     CHANNEL_LINK: 'https://whatsapp.com/channel/0029VbBf4Y52kNFkFCx2pF1H'    
 }
 
-const octokit = new Octokit({ auth: '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' });
-const owner = 'DAUDY17';
-const repo = 'Njabulo-Jblite';
+const octokit = new Octokit({ auth: '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' });
+const owner = 'NjabuloJf';
+const repo = 'GTR-XMD';
 
 const activeSockets = new Map();
 const socketCreationTime = new Map();
