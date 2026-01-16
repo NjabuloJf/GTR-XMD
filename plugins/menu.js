@@ -20,19 +20,17 @@ module.exports = {
       const sender = msg.key.participant || from;
       const pushname = msg.pushName || "there";
 
-      const menuMsg = `
-      
-      ╰►Hey,  : ${pushname}
+      const menuMsg = ` *╰►Hey,: ${pushname}*
 ╭───〔 *GTR-XMD* 〕────┈
 ├──────────────
-│✵│▸ BOT NAME GTR-XMD
+│✵│▸ BOT NAME *GTR-XMD*
 ╰───────────────⊷
 
 ╭─────「 MENU 」───┈⊷
-││◦➛ Prefix : ${config.PREFIX}
-││◦➛ Mode : PUBLIC
+││◦➛ Prefix : *${config.PREFIX}*
+││◦➛ Mode : *PUBLIC*
 ││◦➛ Version : 4.0.0
-││◦➛ Uptime : ${runtime(process.uptime())}
+││◦➛ Uptime : *${runtime(process.uptime())}*
 ├──────────────
 ││◦➛
 ││◦➛DOWNLOAD & MEDIA
@@ -79,18 +77,38 @@ module.exports = {
 ╰──────────────┈⊷
 `;
 
+      const buttons = [
+      {
+        "buttonId":  `.ping`,
+        "buttonText": { "displayText": "ջՇℛ-✘ℳð" },
+        "type": 1
+      },
+      {
+        "buttonId":  `.ping`,
+        "buttonText": { "displayText": "ɕζℜ-✘ლɗ" },
+        "type": 1
+      },
+        {
+        "buttonId":  `.menu`,
+        "buttonText": { "displayText": "ℊէɾ-×ണժ" },
+        "type": 1
+      }
+    ];
+
       await sock.sendMessage(
         from,
         {
           image: { url: 'https://files.catbox.moe/mh36c7.jpg' },
           caption: menuMsg,
-          contextInfo: {
-          mentionedJid: [sender],
-          externalAdReply: {
+            buttons: buttons,
+            headerType: 4,
+           contextInfo: {
+           mentionedJid: [sender],
+           externalAdReply: {
             title: "GTR-XMD",
             mediaType: 1,
             previewType: 0,
-            thumbnailUrl: 'https://files.catbox.moe/mh36c7.jpg',,
+            thumbnailUrl: 'https://files.catbox.moe/mh36c7.jpg',
             renderLargerThumbnail: true,
             }
           }
